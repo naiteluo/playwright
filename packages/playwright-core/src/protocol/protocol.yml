@@ -402,6 +402,9 @@ ContextOptions:
     recordVideo:
       type: object?
       properties:
+        localFFMPEG: string?
+        rtmp: string?
+        extraArgs: string?
         dir: string
         size:
           type: object?
@@ -2639,6 +2642,9 @@ Electron:
         recordVideo:
           type: object?
           properties:
+            localFFMPEG: string?
+            rtmp: string?
+            extraArgs: string?
             dir: string
             size:
               type: object?
@@ -2904,6 +2910,9 @@ AndroidDevice:
         recordVideo:
           type: object?
           properties:
+            localFFMPEG: string?
+            rtmp: string?
+            extraArgs: string?
             dir: string
             size:
               type: object?

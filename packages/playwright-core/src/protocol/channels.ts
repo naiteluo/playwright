@@ -697,14 +697,14 @@ export type BrowserTypeLaunchPersistentContextParams = {
   acceptDownloads?: boolean,
   baseURL?: string,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,
@@ -772,14 +772,14 @@ export type BrowserTypeLaunchPersistentContextOptions = {
   acceptDownloads?: boolean,
   baseURL?: string,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,
@@ -871,14 +871,14 @@ export type BrowserNewContextParams = {
   acceptDownloads?: boolean,
   baseURL?: string,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,
@@ -933,14 +933,14 @@ export type BrowserNewContextOptions = {
   acceptDownloads?: boolean,
   baseURL?: string,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,
@@ -3359,14 +3359,14 @@ export type ElectronLaunchParams = {
     path: string,
   },
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   strictSelectors?: boolean,
   timezoneId?: string,
@@ -3398,14 +3398,14 @@ export type ElectronLaunchOptions = {
     path: string,
   },
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   strictSelectors?: boolean,
   timezoneId?: string,
@@ -3755,14 +3755,14 @@ export type AndroidDeviceLaunchBrowserParams = {
   forcedColors?: 'active' | 'none',
   acceptDownloads?: boolean,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,
@@ -3804,14 +3804,14 @@ export type AndroidDeviceLaunchBrowserOptions = {
   forcedColors?: 'active' | 'none',
   acceptDownloads?: boolean,
   recordVideo?: {
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
     dir: string,
     size?: {
       width: number,
       height: number,
     },
-    localFFMPEG?: string,
-    rtmp?: string,
-    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,

@@ -331,14 +331,14 @@ export function createScheme(tChannel: (name: string) => Validator): Scheme {
     acceptDownloads: tOptional(tBoolean),
     baseURL: tOptional(tString),
     recordVideo: tOptional(tObject({
+      localFFMPEG: tOptional(tString),
+      rtmp: tOptional(tString),
+      extraArgs: tOptional(tString),
       dir: tString,
       size: tOptional(tObject({
         width: tNumber,
         height: tNumber,
       })),
-      localFFMPEG: tOptional(tString),
-      rtmp: tOptional(tString),
-      extraArgs: tOptional(tString),
     })),
     recordHar: tOptional(tObject({
       omitContent: tOptional(tBoolean),
@@ -393,14 +393,14 @@ export function createScheme(tChannel: (name: string) => Validator): Scheme {
     acceptDownloads: tOptional(tBoolean),
     baseURL: tOptional(tString),
     recordVideo: tOptional(tObject({
+      localFFMPEG: tOptional(tString),
+      rtmp: tOptional(tString),
+      extraArgs: tOptional(tString),
       dir: tString,
       size: tOptional(tObject({
         width: tNumber,
         height: tNumber,
       })),
-      localFFMPEG: tOptional(tString),
-      rtmp: tOptional(tString),
-      extraArgs: tOptional(tString),
     })),
     recordHar: tOptional(tObject({
       omitContent: tOptional(tBoolean),
@@ -1211,14 +1211,14 @@ export function createScheme(tChannel: (name: string) => Validator): Scheme {
       path: tString,
     })),
     recordVideo: tOptional(tObject({
+      localFFMPEG: tOptional(tString),
+      rtmp: tOptional(tString),
+      extraArgs: tOptional(tString),
       dir: tString,
       size: tOptional(tObject({
         width: tNumber,
         height: tNumber,
       })),
-      localFFMPEG: tOptional(tString),
-      rtmp: tOptional(tString),
-      extraArgs: tOptional(tString),
     })),
     strictSelectors: tOptional(tBoolean),
     timezoneId: tOptional(tString),
@@ -1352,14 +1352,14 @@ export function createScheme(tChannel: (name: string) => Validator): Scheme {
     forcedColors: tOptional(tEnum(['active', 'none'])),
     acceptDownloads: tOptional(tBoolean),
     recordVideo: tOptional(tObject({
+      localFFMPEG: tOptional(tString),
+      rtmp: tOptional(tString),
+      extraArgs: tOptional(tString),
       dir: tString,
       size: tOptional(tObject({
         width: tNumber,
         height: tNumber,
       })),
-      localFFMPEG: tOptional(tString),
-      rtmp: tOptional(tString),
-      extraArgs: tOptional(tString),
     })),
     recordHar: tOptional(tObject({
       omitContent: tOptional(tBoolean),

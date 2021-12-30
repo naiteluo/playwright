@@ -1,6 +1,6 @@
 {
   "name": "playwright-core",
-  "version": "1.18.999-alpha",
+  "version": "1.18.9991-alpha",
   "description": "A high-level API to automate web browsers",
   "repository": "github:Microsoft/playwright",
   "homepage": "https://playwright.dev",
