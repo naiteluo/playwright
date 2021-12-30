@@ -755,7 +755,7 @@ it('should not save as file if pass smtp path', async ({ browser }, testInfo) =>
     viewport: size,
   });
   const page = await context.newPage();
-  for (let index = 0; index < 50; index++) {
+  for (let index = 0; index < 5; index++) {
     await page.evaluate(() => document.body.style.backgroundColor = 'red');
     await page.waitForTimeout(2000);
     await page.evaluate(() => document.body.style.backgroundColor = 'green');
