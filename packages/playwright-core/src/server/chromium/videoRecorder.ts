@@ -97,8 +97,19 @@ export class VideoRecorder {
 
     const w = options.width;
     const h = options.height;
-    const args = `-loglevel error -f image2pipe -avioflags direct -fpsprobesize 0 -probesize 32 -analyzeduration 0 -c:v mjpeg -i - -y -an -r ${fps} -c:v vp8 -qmin 0 -qmax 50 -crf 8 -deadline realtime -speed 8 -b:v 1M -threads 1 -vf pad=${w}:${h}:0:0:gray,crop=${w}:${h}:0:0`.split(' ');
-    args.push(options.outputFile);
+    let args = `-loglevel error -f image2pipe -avioflags direct -fpsprobesize 0 -probesize 32 -analyzeduration 0 -c:v mjpeg -i - -y -an -r ${fps} -c:v vp8 -qmin 0 -qmax 50 -crf 8 -deadline realtime -speed 8 -b:v 1M -threads 1 -vf pad=${w}:${h}:0:0:gray,crop=${w}:${h}:0:0`.split(' ');
+    // use rtmp as output if pass rtmp publish path
+    if (options.extraArgs)
+      args = options.extraArgs.split(' ');
+
+    if (options.rtmp)
+      args.push(options.rtmp);
+    else
+      args.push(options.outputFile);
+
+    if (options.localFFMPEG && options.localFFMPEG.length > 0)
+      this._ffmpegPath = options.localFFMPEG;
+
     const progress = this._progress;
 
     const { launchedProcess, gracefullyClose } = await launchProcess({

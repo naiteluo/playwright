@@ -15162,6 +15162,19 @@ export interface BrowserContextOptions {
        */
       height: number;
     };
+
+    /**
+     * Use local ffmpeg path
+     */
+    localFFMPEG?: string;
+    /**
+     * rtmp target url
+     */
+    rtmp?: string;
+    /**
+     * ffmpeg args string
+     */
+    extraArgs?: string;
   };
 
   /**

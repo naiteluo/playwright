@@ -708,3 +708,62 @@ it('should saveAs video', async ({ browser }, testInfo) => {
   await page.video().saveAs(saveAsPath);
   expect(fs.existsSync(saveAsPath)).toBeTruthy();
 });
+
+it('should not save as file if pass smtp path', async ({ browser }, testInfo) => {
+  it.slow();
+
+  const videosPath = testInfo.outputPath('');
+  const size = { width: 320, height: 240 };
+  const fps = 25;
+  const w = size.width;
+  const h = size.height;
+  const context = await browser.newContext({
+    recordVideo: {
+      dir: videosPath,
+      size,
+      rtmp: 'rtmp://127.0.0.1:1935/live/pw',
+      extraArgs: [
+        '-re',
+        '-loglevel error',
+        '-f image2pipe',
+        '-avioflags direct',
+        '-fpsprobesize 0',
+        '-probesize 32',
+        '-analyzeduration 0',
+        '-c:v mjpeg',
+        '-i -',
+        '-y',
+        '-an',
+        `-r ${fps}`,
+        // '-c:v h264_videotoolbox',
+        '-x264-params crf=18:profile=baseline:level=3.0',
+        '-tune zerolatency',
+        '-preset llhq',
+        '-qmin 1',
+        '-qmax 50',
+        '-crf 18',
+        '-deadline realtime',
+        '-speed 8',
+        '-b:v 100K',
+        '-threads 2',
+        '-f flv',
+        `-vf pad=${w}:${h}:0:0:gray,crop=${w}:${h}:0:0`,
+        '-sc_threshold 49',
+      ].join(' '),
+      localFFMPEG: 'ffmpeg',
+    },
+    viewport: size,
+  });
+  const page = await context.newPage();
+  for (let index = 0; index < 50; index++) {
+    await page.evaluate(() => document.body.style.backgroundColor = 'red');
+    await page.waitForTimeout(2000);
+    await page.evaluate(() => document.body.style.backgroundColor = 'green');
+    await page.waitForTimeout(2000);
+    await page.evaluate(() => document.body.style.backgroundColor = 'blue');
+    await page.waitForTimeout(2000);
+  }
+  await context.close();
+
+  expect(true).toBeTruthy();
+});

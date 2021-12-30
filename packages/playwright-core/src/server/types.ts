@@ -62,6 +62,9 @@ export type PageScreencastOptions = {
   width: number,
   height: number,
   outputFile: string,
+  localFFMPEG?: string,
+  rtmp?: string,
+  extraArgs?: string,
 };
 
 export type Credentials = {
@@ -263,6 +266,9 @@ export type BrowserContextOptions = {
   recordVideo?: {
     dir: string,
     size?: Size,
+    localFFMPEG?: string,
+    rtmp?: string,
+    extraArgs?: string,
   },
   recordHar?: {
     omitContent?: boolean,

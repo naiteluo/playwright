@@ -435,6 +435,9 @@ class FrameSession {
         // validateBrowserContextOptions ensures correct video size.
         ...this._crPage._browserContext._options.recordVideo.size!,
         outputFile,
+        localFFMPEG: this._crPage._browserContext._options.recordVideo.localFFMPEG,
+        rtmp: this._crPage._browserContext._options.recordVideo.rtmp,
+        extraArgs: this._crPage._browserContext._options.recordVideo.extraArgs,
       };
       await this._crPage._browserContext._ensureVideosPath();
       // Note: it is important to start video recorder before sending Page.startScreencast,
