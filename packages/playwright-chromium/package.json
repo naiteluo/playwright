@@ -1,6 +1,6 @@
 {
   "name": "playwright-chromium",
-  "version": "1.18.999-inner",
+  "version": "1.18.999-alpha",
   "description": "A high-level API to automate Chromium",
   "repository": "github:Microsoft/playwright",
   "homepage": "https://playwright.dev",
